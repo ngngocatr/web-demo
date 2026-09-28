@@ -11,10 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     $password = trim($_POST["password"] ?? "");
 
     if ($username === "" || $password === ""){
-        $message = 'Dang ki KHONG THANH CONG!<br>Tai khoan hoac mat khau khong dung format<br><a href="./register.php">Back to Register</a>';
+        $message = 'Dang ki KHONG THANH CONG!<br>Tai khoan hoac mat khau khong dung format!';
     }
     else{
-        $sql = "INSERT INTO users (username, password_hash)
+        $sql_insertUser = "INSERT INTO users (username, password_hash)
                 VALUES ('$username', '$password')";
 
         try {
@@ -23,14 +23,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
             $res_check = $conn->query($sql_checkUserExsist);
 
             if ($res_check->num_rows == 0){
-                $message = 'Dang ki THANH CONG!<br><a href="./register.php">Back to Register</a>';
+                $conn->query($sql_insertUser);
+                $message = 'Dang ki THANH CONG!<br><a href="./login.php">Đăng nhập</a>';
             }
             else{
-                $message = 'Username da TON TAI!<br><a href="./register.php">Back to Register</a>';
+                $message = 'Username da TON TAI!';
             }
         }
         catch (mysqli_sql_exception $e){;
-            $message = 'Loi DB!<br><a href="./register.php">Back to Register</a>';
+            $message = 'Loi DB!';
         }
     }
 }
