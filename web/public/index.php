@@ -1,7 +1,7 @@
 <?php
-    $title = "Test Title"
+    $title = "Test Title";
+    $test_html = "<h1>hello</h1>"
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +10,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        <?php echo $title ?>
-    </h1>
+    <h1><?= $title ." ". $title?>
+    <?= $test_html?>
+    <button id="test_Btn">Click</button>
+    
+    <br>
+
+    <a href="./search.php">Search</a>
+    <a href="./register.php">Register</a>
+
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
