@@ -4,7 +4,7 @@ session_start();
 $message = '';
 
 if (!isset($_SESSION['id'])){
-    header('location: login.php');
+    header('Location: login.php');
     exit;
 }
 else{
@@ -19,6 +19,7 @@ else{
     <title>Dashboard</title>
 </head>
 <body>
+    <a href="logout.php">Logout</a>
     <h1><?= $message ?></h1>
 </body>
 </html>
