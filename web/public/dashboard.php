@@ -19,6 +19,8 @@ else{
     <title>Dashboard</title>
 </head>
 <body>
+    <a href="profile.php">Profile</a>
+    <a href="changepassword.php">Change password</a>
     <a href="logout.php">Logout</a>
     <h1><?= $message ?></h1>
 </body>
