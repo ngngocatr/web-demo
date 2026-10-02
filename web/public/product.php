@@ -52,5 +52,45 @@ if ($res->num_rows == 0){
     <p>Giá: <?= $product['price'] ?> VNĐ</p>
     <p>Mô tả sản phẩm: <?= $product['description'] ?></p>
     <p><?php echo '<a href="products.php">Back to all products</a>'; ?></p>
+    <hr>
+    <h2>Comment</h2>
+    <?php
+    $sql_getComment = "SELECT * FROM comments WHERE product_id=$id_product";
+
+    try {
+        $res = $conn->query($sql_getComment);
+
+        if ($res->num_rows === 0) {
+            echo "<p>Không có bình luận</p>";
+        } else {
+            while ($comment = $res->fetch_assoc()) {
+                $user_id = $comment['user_id'];
+                $sql_getUsername = "SELECT username FROM users WHERE id=$user_id;";
+                $res_user = $conn->query($sql_getUsername);
+                $username = $res_user->fetch_assoc()['username'];
+                echo '
+                    <div class="comment">
+                        <div class="comment-header">
+                            <strong>' . $username . '</strong>
+                            <span>' . $comment['created_at'] . '</span>
+                        </div>
+
+                        <p class="comment-content">
+                            ' . $comment['content'] . '
+                        </p>
+                    </div>
+                ';
+            }
+        }
+    }
+    catch (mysqli_sql_exception $e) {
+    echo "<p>Lỗi kết nối DB</p>";
+}
+?>
+    <hr>
+    <form action="<?php echo 'comment.php?id=' . $id_product; ?>" method="POST">
+        <input type="text" name="content">
+        <button type="submit">Comment</button>
+    </form>
 </body>
 </html>

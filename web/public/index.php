@@ -15,8 +15,8 @@
     <button id="test_Btn">Click</button>
     
     <br>
-
-    <a href="./search.php">Search</a>
+    <a href="./login.php">Login</a><br>
+    <a href="./search.php">Search</a><br>
     <a href="./register.php">Register</a>
 
     <script src="assets/js/app.js"></script>

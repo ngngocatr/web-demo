@@ -48,3 +48,14 @@ UPDATE products SET is_published = 0 WHERE id = 7;
 UPDATE products SET is_published = 1 WHERE id = 8;
 UPDATE products SET is_published = 0 WHERE id = 9;
 UPDATE products SET is_published = 1 WHERE id = 10;
+
+#Tạo bảng comment cho sản phẩm
+CREATE TABLE comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    product_id INT NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+# Khởi tạo dữ liệu ban đầu
