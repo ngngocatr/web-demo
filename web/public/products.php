@@ -20,6 +20,7 @@ catch(mysqli_sql_exception $e){
     <title>Products</title>
 </head>
 <body>
+    <?php require_once("../src/helpers/header.php"); ?>
     <h1>Danh sách sản phẩm</h1>
     <?php
     #Nếu không có sản phẩm nào được trả về

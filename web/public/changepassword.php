@@ -59,6 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     <title>Change password</title>
 </head>
 <body>
+    <?php require_once("../src/helpers/header.php"); ?>
     <h1>Change password</h1>
     <form action="changepassword.php" method="POST">
         <label for="oldPassword">Current password:</label><br>

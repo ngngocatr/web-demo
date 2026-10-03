@@ -10,15 +10,12 @@
     <title>Document</title>
 </head>
 <body>
+    <?php require_once("../src/helpers/header.php"); ?>
     <h1><?= $title ." ". $title?>
     <?= $test_html?>
     <button id="test_Btn">Click</button>
     
     <br>
-    <a href="./login.php">Login</a><br>
-    <a href="./search.php">Search</a><br>
-    <a href="./register.php">Register</a>
-
     <script src="assets/js/app.js"></script>
 </body>
 </html>

@@ -22,6 +22,7 @@ catch(mysqli_sql_exception $e){
     <title>Seach</title>
 </head>
 <body>
+    <?php require_once("../src/helpers/header.php"); ?>
     <h1>Search engine</h1>
 
     <form action="search.php" method="GET">

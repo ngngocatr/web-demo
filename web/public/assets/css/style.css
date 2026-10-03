@@ -1,0 +1,21 @@
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.navbar {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}

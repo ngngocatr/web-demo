@@ -21,6 +21,10 @@ $res = $conn->query($sql_get_infor);
 if ($res->num_rows > 0){
     $user = $res->fetch_assoc();
 }
+else{
+    echo "<p>Người dùng không hợp lệ</p>";
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +34,7 @@ if ($res->num_rows > 0){
     <title>Profile</title>
 </head>
 <body>
-    <a href="dashboard.php">Dashboard</a>
-    <a href="logout.php">Logout</a>
+    <?php require_once("../src/helpers/header.php"); ?>
     <p>ID: <?= $user['id']; ?></p>
     <p>Username: <?= $user['username']; ?></p>
 </body>
